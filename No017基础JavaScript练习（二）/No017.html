@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>No017</title>
+    <style type="text/css">
+        input{
+            width: 70px;
+            height: 30px;
+        }
+        button{
+            height: 30px;
+        }
+        #sort{
+            margin-top: 20px;
+            width: 330px;
+        }
+    </style>
+</head>
+<body>
+<div style="margin: auto; width: 350px; text-align: center;">
+    <p>输入数字，点击删除</p>
+    <input type="text">
+    <button id="left_in">左侧入</button> <button id="right_in">右侧入</button>
+    &nbsp;
+    <button id="left_out">左侧出</button> <button id="right_out">右侧出</button>
+    <br>
+    <button id="sort">排序</button>
+</div>
+<script type="text/javascript">
+    (function(){
+        var container= document.createElement("div");
+        container.setAttribute("id","container");
+        container.style.width = "350px";
+        container.style.height = "240px";
+        container.style.margin = "auto";
+        container.style.display = "flex";
+        container.style.alignItems = "flex-end";
+        document.getElementsByTagName("body")[0].appendChild(container);
+    }());
+    function create_div(num){
+        if(!num){
+            alert("请输入值！");
+            return;
+        }
+        if(isNaN(num)){
+            alert("请输入数字！"+num);
+            document.getElementsByTagName("input")[0].value="";
+            return;
+        }
+        if(parseInt(num)>100 || parseInt(num)<10){
+            alert("请输入10-100的整数！");
+            document.getElementsByTagName("input")[0].value="";
+            return;
+        }
+        var new_div = document.createElement("div");
+        new_div.style.height = parseInt(num)*2+"px";
+        new_div.style.width = "30px";
+        new_div.style.backgroundColor = "red";
+        new_div.style.margin = "2px";
+        new_div.style.color = "white";
+        new_div.style.float = "left";
+        new_div.style.textAlign = "center";
+        new_div.style.lineHeight = new_div.style.height;
+        var text = document.createTextNode(num);
+        new_div.appendChild(text);
+        new_div.onclick = remove_self;
+        return new_div;
+    }
+    var container = document.getElementById("container");
+    function right_in(){
+        if(container.children.length > 10) {
+            alert("容量受限，无法继续添加元素！");
+            return;
+        }
+        var input = document.getElementsByTagName("input")[0].value;
+        container.appendChild(create_div(input));
+        document.getElementsByTagName("input")[0].value = "";
+    }
+    function left_in(){
+        if(container.children.length > 20) {
+            alert("容量受限，无法继续添加元素！");
+            return;
+        }
+        var input = document.getElementsByTagName("input")[0].value;
+        var first_child = container.firstChild;
+        container.insertBefore(create_div(input),first_child);
+        document.getElementsByTagName("input")[0].value = "";
+    }
+    function left_out(){
+        if(!container.firstChild){
+            alert("没有可以删除的节点！");
+            return;
+        }
+        alert("你删除的是："+container.firstChild.innerHTML);
+        container.removeChild(container.firstChild);
+    }
+    function right_out(){
+        if(!container.lastChild){
+            alert("没有可以删除的节点！");
+            return;
+        }
+        alert("你删除的是："+container.lastChild.innerHTML);
+        container.removeChild(container.lastChild);
+    }
+    function remove_self() {
+        alert("你删除的是："+this.innerHTML);
+        this.remove(this);
+    }
+    function sort_div() {
+        var cc = container.children;
+        var len = cc.length;
+        if(len == 0){
+            alert("请先输入数字再排序！");
+            return;
+        }
+        for (var i = 0; i < len-1; i++){
+            for(var j = 0; j< len-i-1 ; j++){
+                if(parseInt(cc[j].innerHTML) > parseInt(cc[j+1].innerHTML)){
+                    container.appendChild(create_div(cc[j].innerHTML));
+                    container.appendChild(create_div(cc[j+1].innerHTML));
+                    container.replaceChild(container.lastChild, cc[j]);
+                    container.replaceChild(container.lastChild, cc[j+1]);  //意识到replace在替换后会把替换的元素销毁
+                }
+            }
+        }
+    }
+    document.getElementById("left_in").onclick = left_in;
+    document.getElementById("right_in").onclick = right_in;
+    document.getElementById("left_out").onclick = left_out;
+    document.getElementById("right_out").onclick = right_out;
+    document.getElementById("sort").onclick = sort_div;
+</script>
+</body>
+</html>

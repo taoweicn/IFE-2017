@@ -1,0 +1,201 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+nav{
+	min-width: 1055px;
+	height: 60px;
+	background-color: #2189bf;
+	position: relative;
+	color: #fff;
+}
+#logo{
+	width: 35px;
+	height: 35px;
+	background-color: #fff;
+	position: absolute;
+	left: 50px;
+	top: 12px;
+}
+#logopart{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-left: 2px #2189bf solid;
+	border-top: 2px #2189bf solid;
+}
+#search{
+	position: absolute;
+	top: 18px;
+	right: 150px;
+	border-radius: 25px;
+	width: 300px;
+	height: 25px;
+	border-style: none;
+	background-image: url(img/search.svg);
+	background-size: 22px;
+	background-repeat: no-repeat;
+	background-position: 4%;
+	outline: none;
+	padding-left: 42px;
+}
+#login{
+	height: 18px;
+	position: absolute;
+	right: 110px;
+	top: 21px;
+}
+#denglu{
+	position: absolute;
+	right: 76px;
+	top: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+aside{
+	width: 255px;
+	height: 1200px;
+	float: left;
+	background-color: #2a2e3d;
+	color: #6B6868;
+	font-size: 16px;
+}
+#user{
+	padding: 20px 0 0 40px;
+}
+aside .words{
+	color: #fff;
+	float: left;
+	margin: 17px 0 0 63px;
+}
+#profile{
+	margin-left: 8%;
+	width: 70%;
+	height: 55px;
+	margin-top: 20px;
+	color: #706F6F;
+	font-size: 14px;
+}
+aside .left{
+	box-sizing: border-box;
+	width: 50%;
+	border-right: 2px #4F4E4E solid;
+	float: left;
+	text-align: center;
+}
+aside .right{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+#unfold{
+	width: cacl(100%-40px);
+	height: 208px;
+	background-color: #383d4e;
+	padding-left: 40px;
+	padding-top: 5px;
+}
+aside ul{
+	list-style: none;
+}
+aside ul li{
+	background-repeat: no-repeat; 
+	text-indent: 28px; 
+	line-height: 16px; 
+	margin: 15px;
+}
+
+article{
+	height: 1200px;
+	margin-left: 255px;
+	background-color: #ededec;
+	padding: 20px 70px 0 60px;
+	min-width: 670px;
+}
+header{
+	height: 30px;
+}
+header span{
+	color: #aaaaaa;
+	line-height: 30px;
+	font-size: 14px;
+}
+#one{
+	height: 80px;
+	background-color: #fff;
+}
+#one table{
+	padding: 10px;
+}
+#one table td{
+	padding: 3px 10px;
+}
+#four{
+	border-radius: 5px;
+	background-color: #fff;
+	height: 355px;
+	width: 520px;
+	margin-top: 15px;
+}
+#four ul{
+	list-style: none;
+}
+#four ul li{
+	float: left;
+	font-size: 14px;
+	width: 80px;
+	height: 26px;
+	text-align: center;
+	line-height: 24px;
+	margin: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	background-color: #ededf0;
+}
+#four table{
+	font-size: 14px;
+	margin: auto;
+}
+#four table td{
+	width: 100px;
+	height: 30px;
+	text-align: center;
+}
+#four input{
+	display: none;
+}
+.nav{
+	position: relative;
+	overflow: hidden;
+}
+#four li label{
+	display: block;
+}
+#content1, #content2{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Document */
+

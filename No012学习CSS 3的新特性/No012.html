@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>No012</title>
+<style type="text/css">
+	table,td,th{
+		border-style: none;
+	}
+	table{
+		margin: auto;
+	}
+	tr{
+		color: #ff0000;
+	}
+	tr:nth-child(odd){
+		background-color: #C0BABA;
+	}
+	tr:first-child{
+		background-color: #000;
+		color: #fff;
+	}
+	tr:nth-child(n+5){
+		color: #000;
+	}
+	input{
+		display: block;
+		margin:  30px auto;
+	}
+	.large{
+		width: 600px;
+		height: 200px;
+		margin: 10px auto;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: flex-end;
+		position: relative;
+	}
+	.small{
+		width: 50px;
+		height: 50px;
+		margin: 2px;
+		line-height: 50px;
+		font-size: 26px;
+		text-align: center;
+		background-color: rgba(220,218,218,0.5);
+		color: #fff;
+	}
+</style>
+</head>
+
+<body>
+	<table border="2">
+		<tr>
+			<th>排名</th><th>网站</th><th>热度</th>
+		</tr>
+		<tr>
+			<td>1.</td><td>百度前端技术学院</td><td>13000</td>
+		</tr>
+		<tr>
+			<td>2.</td><td>百度前端技术学院</td><td>12000</td>
+		</tr>
+		<tr>
+			<td>3.</td><td>百度前端技术学院</td><td>11000</td>
+		</tr>
+		<tr>
+			<td>4.</td><td>百度前端技术学院</td><td>10000</td>
+		</tr>
+		<tr>
+			<td>5.</td><td>百度前端技术学院</td><td>9000</td>
+		</tr>
+		<tr>
+			<td>6.</td><td>百度前端技术学院</td><td>8000</td>
+		</tr>
+		<tr>
+			<td>7.</td><td>百度前端技术学院</td><td>7000</td>
+		</tr>
+		<tr>
+			<td>8.</td><td>百度前端技术学院</td><td>6000</td>
+		</tr>
+		<tr>
+			<td>9.</td><td>百度前端技术学院</td><td>5000</td>
+		</tr>
+		<tr>
+			<td>10.</td><td>百度前端技术学院</td><td>4000</td>
+		</tr>
+	</table>
+	<input>
+	<input style="width: 300px; box-shadow: 0 0 5px 1px blue; border-style: none;">
+	<div class="large" style="background-color: #00ff00;">
+		<div class="small">1</div>
+		<div class="small">2</div>
+		<div class="small">3</div>
+	</div>
+	<div class="large" style="background-color: #00ff00;">
+		<div style="width: 50%; height: 100%; background-color: #0000ff; position: absolute; left: 0;"></div>
+		<div class="small">1</div>
+		<div class="small">2</div>
+		<div class="small">3</div>
+	</div>
+	<div class="large" style="background-color: #0000ff;">
+		<div class="small">1</div>
+		<div class="small">2</div>
+		<div class="small">3</div>
+	</div>
+</body>
+</html>

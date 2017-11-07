@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>No010</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		#container{
+			display: flex;
+			padding: 20px;
+			justify-content: space-between;
+			border : 1px #aaa solid;
+		}
+		section:nth-child(n){
+			width: 150px;
+			border: 1px #f00 solid;
+			margin-top: 20px;
+		}
+		#one{
+			height: 120px;
+		}
+		#two{
+			height: 100px;
+		}
+		#three{
+			height: 40px;
+		}
+		#four{
+			height: 200px;
+			border-color: #00f;
+		}
+		@media screen and (min-width: 641px){
+			#container{
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
+		@media screen and (max-width: 640px){
+			#container{
+				align-items: flex-start;
+				justify-content: space-between;
+				flex-flow: row wrap;
+			}
+			#four{
+				order: -1;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<section id="one"></section>
+		<section id="two"></section>
+		<section id="three"></section>
+		<section id="four"></section>
+	</div>
+</body>
+</html>

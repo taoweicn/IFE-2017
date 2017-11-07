@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No018</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        textarea{
+            width: 400px;
+            height: 160px;
+            margin: auto;
+            resize: none;
+            display: block;
+        }
+        input{
+            border: 1px #3bbfce solid;
+            width: 200px;
+            height: 30px;
+            margin: 10px auto;
+        }
+        button{
+            border-style: none;
+            background-color: #5bc0de;
+            width: 100px;
+            height: 36px;
+            margin: 10px auto;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button>查找关键词</button>
+    <textarea></textarea>
+<script>
+    function search() {
+        var string = document.getElementsByTagName("textarea")[0].value;
+        var input = document.getElementsByTagName("input")[0].value;
+        return (string.search(input));
+    }
+    document.getElementsByTagName("button")[0].onclick = search;
+</script>
+</body>
+</html>
