@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <title>No018</title>
     <style type="text/css">
-        body{
+        body {
             text-align: center;
         }
-        textarea{
+        textarea {
             width: 400px;
             height: 160px;
             margin: auto;
             resize: none;
             display: block;
+            overflow: hidden;
         }
-        input{
+        input {
             border: 1px #3bbfce solid;
             width: 200px;
             height: 30px;
             margin: 10px auto;
         }
-        button{
+        button {
             border-style: none;
+            border-radius: 3px;
             background-color: #5bc0de;
             width: 100px;
             height: 36px;
@@ -29,19 +31,53 @@
             color: #fff;
             font-size: 14px;
         }
+        #displayArea {
+            width: 400px;
+            height: 300px;
+        }
+        span {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #5bc0de;
+        }
     </style>
 </head>
 <body>
-    <input type="text">
-    <button>查找关键词</button>
-    <textarea></textarea>
+    <div>
+        <textarea></textarea>
+        <button id="add">添加</button>
+    </div>
+   <div>
+       <input type="text">
+       <button id="search">查找关键词</button>
+   </div>
+    <div id="displayArea"></div>
+
 <script>
-    function search() {
-        var string = document.getElementsByTagName("textarea")[0].value;
-        var input = document.getElementsByTagName("input")[0].value;
-        return (string.search(input));
+    function display() {
+      let inputStr = document.querySelector('textarea').value;
+      let displayArea = document.querySelector('#displayArea');
+      displayArea.innerHTML = '';
+      inputStr = inputStr.replace(/\W/g, ' ');
+      let arr = inputStr.trim().split(' ');
+      arr.forEach(item => {
+        let span = document.createElement('span');
+        span.innerHTML = item;
+        displayArea.appendChild(span);
+      });
     }
-    document.getElementsByTagName("button")[0].onclick = search;
+
+    function search() {
+        let searchKeywords = document.querySelector('input').value;
+        let items = document.querySelectorAll('span');
+        for (let i = 0; i< items.length; i++) {
+          console.log(items[i]);
+          items[i].innerHTML = items[i].innerHTML.replace(searchKeywords, '<mark>' + searchKeywords +'</mark>');
+        }
+    }
+
+    document.querySelector('#add').addEventListener('click', display);
+    document.querySelector('#search').addEventListener('click', search);
 </script>
 </body>
 </html>
